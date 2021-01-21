@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+    margin-top: 15%;
+    font-weight: 700;
+    font-size: 8vw;
+    font-family: Inter, Source Sans Pro, Helvetica Neue, Arial, sans-serif;
+}
+
+h1 span {
+    color: purple;
+}
+
+.banner {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background: #C6FFDD;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f7797d, #FBD786, #C6FFDD);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f7797d, #FBD786, #C6FFDD);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    overflow: hidden;
+}
+
+.chat {
+    width: 10vw;
+    height: 6vh;
+    position: relative;
+    margin-left: 45%;
+    background: none;
+    border: 1px solid purple;
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: inline;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 1;
+    color: #1a1919;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+
+.chat span:nth-child(1) {
+    left: calc(0%);
+    transition-delay: calc(-0.1s);
+}
+
+.chat span:nth-child(2) {
+    left: calc(25%);
+    transition-delay: calc(0s);
+}
+
+.chat span:nth-child(3) {
+    left: calc(50%);
+    transition-delay: calc(0.1s);
+}
+
+.chat span:nth-child(4) {
+    left: calc(75%);
+    transition-delay: calc(0.2s);
+}
+
+.chat:hover, .chat:active, .chat:focus {
+    color: white;
+    transition: all 0.6s ease 0s;
+    outline: none;
+}
+
+.chat:hover span, .chat:active span, .chat:focus span {
+    transform: translateY(0px) scale(2);
+}
+
+.chat span {
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    background-color: purple;
+    border-radius: 50%;
+    transition: all 0.5s ease 0s;
+    transform: translateY(150%);
+    z-index: -200;
+}
+
+.box-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.box-area li {
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 25px;
+    height: 25px;
+    background: purple;
+    overflow: hidden;
+    -webkit-animation: animation 20s linear infinite;
+    animation: animate 20s linear infinite;
+    bottom: -120px;
+    border-radius: 50%;
+}
+
+.box-area li:nth-child(1) {
+    left: 86%;
+    width: 80px;
+    height: 80px;
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+}
+
+.box-area li:nth-child(2) {
+    left: 12%;
+    width: 30px;
+    height: 30px;
+    -webkit-animation-delay: 1.5s;
+    animation-delay: 1.5s;
+    -webkit-animation-duration: 10s;
+    animation-duration: 10s;
+}
+
+.box-area li:nth-child(3) {
+    left: 70%;
+    width: 100px;
+    height: 100px;
+    -webkit-animation-delay: 5.5s;
+    animation-delay: 5.5s;
+}
+
+.box-area li:nth-child(4) {
+    left: 42%;
+    width: 150px;
+    height: 150px;
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+    -webkit-animation-duration: 15s;
+    animation-duration: 15s;
+}
+
+.box-area li:nth-child(5) {
+    left: 65%;
+    width: 40px;
+    height: 40px;
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+}
+
+.box-area li:nth-child(6) {
+    left: 15%;
+    width: 110px;
+    height: 110px;
+    -webkit-animation-delay: 3.5s;
+    animation-delay: 3.5s;
+    -webkit-animation-duration: 15s;
+    animation-duration: 15s;
+}
+
+@-webkit-keyframes animate {
+    0% {
+        -webkit-transform: translateY(0) rotate(0deg);
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: translateY(-100vh) rotate(360deg);
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes animate {
+    0% {
+        -webkit-transform: translateY(0) rotate(0deg);
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: translateY(-100vh) rotate(360deg);
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    h1 {
+        margin-top: 85% ;
+        font-weight: 700;
+        font-size: 20vw;
+    }
+    .chat{
+        width: 38vw;
+        margin-top: 10px;
+       margin-left: 33%;
+    }
+}
